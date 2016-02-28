@@ -6,6 +6,8 @@ int _step = 0;
 boolean dir = true;// gre
 void setup() 
 { 
+   Serial.begin(9600);
+   Serial.println("Comunicazione inizializzata");
  pinMode(Pin0, OUTPUT);  
  pinMode(Pin1, OUTPUT);  
  pinMode(Pin2, OUTPUT);  
@@ -13,6 +15,18 @@ void setup()
 } 
  void loop() 
 { 
+  if (Serial.available())
+  {
+   String str = Serial.readString();
+    if(str=="a\r\n"){
+      dir =true;
+      Serial.write("OK");
+    }
+    if(str=="d\r\n"){
+      dir =false;
+      Serial.write("OK");
+    }
+  }
  switch(_step){ 
    case 0: 
      digitalWrite(Pin0, LOW);  
