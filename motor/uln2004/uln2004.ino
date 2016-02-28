@@ -1,7 +1,7 @@
-int Pin0 = 10; 
-int Pin1 = 11; 
-int Pin2 = 12; 
-int Pin3 = 13; 
+int Pin0 = 8; 
+int Pin1 = 9; 
+int Pin2 = 10; 
+int Pin3 = 11; 
 int _step = 0; 
 boolean dir = true;// gre
 void setup() 
